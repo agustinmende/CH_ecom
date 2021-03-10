@@ -4,8 +4,19 @@ h1 {
 }
 
 /* Nav Bar */
+.NavBar {
+  position: relative;
+}
+.NavBar img {
+  width: 45px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .NavBar h2 {
-  padding: 14px 16px;
+  padding: 5px 0 0 50px;
 }
 .NavBar ul {
   list-style-type: none;

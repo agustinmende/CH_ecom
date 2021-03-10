@@ -1,16 +1,17 @@
+import CartWidget from '../components/CartWidget';
 
-function NavBar() {
+const NavBar = () => {
   return (
-
-    <div className="NavBar">
+  <div className="NavBar">
       <h2>Navegación</h2>
+      <CartWidget/>
       <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Productos</a></li>
-          <li><a href="#">Metodos de pago</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="#nogo">Inicio</a></li>
+          <li><a href="#nogo">Productos</a></li>
+          <li><a href="#nogo">Metodos de pago</a></li>
+          <li><a href="#nogo">Contacto</a></li>
       </ul>
-    </div>
+  </div>
   );
 }
 

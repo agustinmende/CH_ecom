@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
           <h1>Mate</h1>
         </div>
         <NavBar />
+        <ItemListContainer greeting="Seleccioná tu producto"/>
       </>
     );
   }
