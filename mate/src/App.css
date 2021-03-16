@@ -3,6 +3,13 @@ h1 {
   padding: 0 0 0 14px;
 }
 
+/* app */
+.App {
+  padding: 10px;
+}
+.App h3 {
+  padding: 5px 0 0 10px;
+}
 /* Nav Bar */
 .NavBar {
   position: relative;
@@ -18,6 +25,7 @@ h1 {
 .NavBar h2 {
   padding: 5px 0 0 50px;
 }
+
 .NavBar ul {
   list-style-type: none;
   margin: 0;
@@ -37,4 +45,46 @@ h1 {
 }
 .NavBar li a:hover {
   background-color: #111;
+}
+
+/* Item Count */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#itemCount {
+  width: 22vw;
+  padding: 10px;
+  text-align: center;
+}
+#itemCount img {
+  max-width: 100%;
+  max-height: 100%;
+}
+#itemCount .item {
+  display: block;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(236, 236, 236);
+}
+
+#itemCount .addToCart {
+  width: 18vw;
+  margin: 10px 0 0 0;
+  padding: 5px 0 5px 0;
+}
+#itemCount input {
+  width: 5vw;
+}
+#itemCount p {
+  font-size: 0.8em;
 }
