@@ -16,3 +16,7 @@ Desafío: Estilos y Home
 
 Desafío: Contador con botón
 
+## Entrega #5
+
+Desafío: Catálogo con MAPS y Promises
+
