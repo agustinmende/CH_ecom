@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ItemCount from "../components/ItemCount";
+import ItemList from "../components/ItemList";
 
 const ItemListContainer = (props) => {
 
@@ -16,6 +17,9 @@ const [stockActual, setStockActual] = useState(10);
                 <h3>
                     {props.greeting}
                 </h3>
+
+                <ItemList items={props.items} />
+
                 <ItemCount stock={stockActual} initial={1} onAdd={restarStock} />
             </div>
     )

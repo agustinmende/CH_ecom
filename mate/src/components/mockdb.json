@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "title": "Sample product",
+    "description": "Sample description.",
+    "price": 1,
+    "pictureUrl": "placeholder.png"
+  },
+  {
+    "id": "2",
+    "title": "Sample product",
+    "description": "Sample description.",
+    "price": 1,
+    "pictureUrl": "placeholder.png"
+  },
+  {
+    "id": "3",
+    "title": "Sample product",
+    "description": "Sample description.",
+    "price": 1,
+    "pictureUrl": "placeholder.png"
+  },
+  {
+    "id": "4",
+    "title": "Sample product",
+    "description": "Sample description.",
+    "price": 1,
+    "pictureUrl": "placeholder.png"
+  },
+  {
+    "id": "5",
+    "title": "Sample product",
+    "description": "Sample description.",
+    "price": 1,
+    "pictureUrl": "placeholder.png"
+  },
+  {
+    "id": "6",
+    "title": "Sample product",
+    "description": "Sample description.",
+    "price": 1,
+    "pictureUrl": "placeholder.png"
+  }
+]
