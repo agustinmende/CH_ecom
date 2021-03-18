@@ -6,7 +6,7 @@ function ItemList (props) {
     <div id="productList">
       {
         props.items.map(
-          item => <Item key={item.id} item={item} />
+          item => <Item item={item} />
         )
       }
     </div>

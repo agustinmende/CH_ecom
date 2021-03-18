@@ -8,7 +8,7 @@ function App() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    new Promise((resolve, reject) => {
+    new Promise((resolve, _reject) => {
       setTimeout(() => {
         resolve(productos);
       }, 2000);
