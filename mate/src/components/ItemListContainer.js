@@ -14,13 +14,10 @@ const [stockActual, setStockActual] = useState(10);
     };
     return (
             <div className="App">
-                <h3>
-                    {props.greeting}
-                </h3>
-
+                <h3>{props.greeting}</h3>
+               {/* comento esta funcionalidad para esta entrega ya que no es necesaria */}
+               {/* <ItemCount stock={stockActual} initial={1} onAdd={restarStock} /> */}
                 <ItemList items={props.items} />
-
-                <ItemCount stock={stockActual} initial={1} onAdd={restarStock} />
             </div>
     )
 };

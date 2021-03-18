@@ -1,44 +1,58 @@
 [
   {
     "id": "1",
-    "title": "Sample product",
+    "title": "Sample product 1",
     "description": "Sample description.",
     "price": 1,
     "pictureUrl": "placeholder.png"
   },
   {
     "id": "2",
-    "title": "Sample product",
+    "title": "Sample product 2",
     "description": "Sample description.",
-    "price": 1,
+    "price": 2,
     "pictureUrl": "placeholder.png"
   },
   {
     "id": "3",
-    "title": "Sample product",
+    "title": "Sample product 3",
     "description": "Sample description.",
-    "price": 1,
+    "price": 3,
     "pictureUrl": "placeholder.png"
   },
   {
     "id": "4",
-    "title": "Sample product",
+    "title": "Sample product 4",
     "description": "Sample description.",
-    "price": 1,
+    "price": 4,
     "pictureUrl": "placeholder.png"
   },
   {
     "id": "5",
-    "title": "Sample product",
+    "title": "Sample product 5",
     "description": "Sample description.",
-    "price": 1,
+    "price": 5,
     "pictureUrl": "placeholder.png"
   },
   {
     "id": "6",
-    "title": "Sample product",
+    "title": "Sample product 6",
     "description": "Sample description.",
-    "price": 1,
+    "price": 6,
+    "pictureUrl": "placeholder.png"
+  },
+  {
+    "id": "7",
+    "title": "Sample product 7",
+    "description": "Sample description.",
+    "price": 7,
+    "pictureUrl": "placeholder.png"
+  },
+  {
+    "id": "8",
+    "title": "Sample product 8",
+    "description": "Sample description.",
+    "price": 8,
     "pictureUrl": "placeholder.png"
   }
 ]
