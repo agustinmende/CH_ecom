@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import itemImage from "../images/placeholder.png";
+//import itemImage from "../images/placeholder.png";
 
 
 const ItemCount = ({ stock, initial, onAdd }) => {
@@ -32,14 +32,13 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     return (
         <form id="itemCount">
             <div className="item">
-                <img src={itemImage} alt="placeholderIMG"/>
+               {/* <img src={itemImage} alt="placeholderIMG"/> */}
                 <button id="decrease" onClick={(e) => itemChange(e)} disabled={items <= 0}>-</button>
                 <input type="number" value={items} placeholder={initial} onChange={(e) => handleChange(e)}></input>
                 <button id="increase" onClick={(e) => itemChange(e)} disabled={items >= stock}>+</button>
                 <p>Cantidad disponible: {availableStock}</p>
             </div>
             <button className="addToCart" onClick={(e) =>{ onAdd(e, items); setItems(0)}}>Agregar</button>
-
         </form>
     );
 };

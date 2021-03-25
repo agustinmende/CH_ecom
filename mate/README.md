@@ -20,3 +20,11 @@ Desafío: Contador con botón
 
 Desafío: Catálogo con MAPS y Promises
 
+## Entrega #6
+
+Desafío: Detalle de Producto
+
+## Entrega #7
+
+Primera Entrega del Proyecto Final
+

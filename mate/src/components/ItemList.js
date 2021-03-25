@@ -4,9 +4,11 @@ function ItemList (props) {
 
   return (
     <div id="productList">
-      {
-        props.items.map(
-          item => <Item item={item} />
+       {
+        Object.keys(props.items).map(
+          (id) => {
+            return <Item key={id} id={id} item={props.items[id]} />;
+          }
         )
       }
     </div>
