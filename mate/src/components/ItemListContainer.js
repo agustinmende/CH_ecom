@@ -59,6 +59,7 @@ useEffect(() => {
     return (
         <div className="App">
             <ItemCategories categories={categories} />
+            <h3>{props.greeting}</h3>
             <ItemList items={itemsFiltered} />
          {/*
                 <h3>{props.greeting}</h3>

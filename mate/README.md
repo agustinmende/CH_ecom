@@ -28,3 +28,7 @@ Desafío: Detalle de Producto
 
 Primera Entrega del Proyecto Final
 
+## Entrega #8
+
+Desafío: Sincronizar counter
+
