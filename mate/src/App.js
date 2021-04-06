@@ -5,7 +5,6 @@ import NavBar from './components/NavBar';
 
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from "./components/ItemDetailContainer";
-//import productos from "./components/productos.json";
 import {CartProvider} from "./context/CartContext";
 
 function App() {

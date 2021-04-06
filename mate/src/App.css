@@ -73,7 +73,7 @@ h1 span {
   align-items: center;
   position: relative;
 }
-#cart-widget span {
+#cart-widget span.full {
   display: block;
   position: absolute;
   color:#ffffff;
@@ -87,6 +87,12 @@ h1 span {
   text-align: center;
   font-weight: bold;
 }
+#cart-widget span.empty {
+  display: none;
+}
+
+
+
 .breadcrumbs a {
   color:rgb(97, 124, 180);
   margin: 10px 0 10px 0;
