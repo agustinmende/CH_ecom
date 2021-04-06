@@ -4,7 +4,7 @@ import ItemCount from './ItemCount';
 import { CartContext } from '../context/CartContext';
 
 function ItemDetail(props) {
-        const initial = 1;
+        const initial = 0;
         const [itemsQ, setItemsQ] = useState(initial);
         const context = useContext(CartContext);
         const item = {

@@ -197,19 +197,23 @@ input[type=number] {
 
 
 /* detalle de producto */
-
+.producto {
+  display: flex;
+}
 .producto img {
   width: 30vw;
-  float: left;
+
 }
 .producto .opciones-compra {
   width: 60vw;
-  float: left;
+  font-family: 'Lato', sans-serif;
   margin: 0 0 0 10px;
   padding: 0 0 0 20px;
+
 }
 .producto .opciones-compra h3 {
   padding: 0 ;
+
 }
 .item-categories {
   margin: 20px 0 20px 0;

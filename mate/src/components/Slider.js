@@ -3,8 +3,8 @@ import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 
 const fadeImages  = [
-    'images/slider.png',
-    'images/slider2.png'
+    '/images/slider.png',
+    '/images/slider2.png'
   ];
 
 function Slider() {
