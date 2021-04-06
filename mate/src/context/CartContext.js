@@ -90,6 +90,7 @@ function CartProvider({ defaultValue = [], children }) {
             return cur.quantity + acc
         }, 0);
         setTotalQty(total);
+        return(total);
     }
 
     useEffect(() => {
@@ -98,7 +99,7 @@ function CartProvider({ defaultValue = [], children }) {
     });
 
     return (
-        <CartContext.Provider value={{ cart, setCart, addItem, substractItem, removeItem, clear, isInCart, getItemQty, totalQty, totalPrice }}>
+        <CartContext.Provider value={{ cart, setCart, addItem, substractItem, removeItem, clear, isInCart, getItemQty, getTotalQty, totalQty, totalPrice }}>
             {children}
         </CartContext.Provider>
     );

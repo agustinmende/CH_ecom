@@ -31,7 +31,7 @@ function ItemDetail(props) {
             <>
                 <p className="stock">Cantidad disponible: {availableStock}</p>
                 <ItemCount min="0" max={maxStock} value={itemsQ} onAdd={onAdd} onSubstract={onSubstract} />
-                <button onClick={(e) => { onAddToCart(e) }} className={`btn--big ${itemsQ === 0 ? 'disabled' : ''}`} >Agregar al carrito</button>
+                <button onClick={(e) => { onAddToCart(e) }} >Agregar al carrito</button>
             </>
         )
     }
