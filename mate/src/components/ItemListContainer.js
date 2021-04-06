@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect  } from 'react';
-//import ItemCount from "../components/ItemCount";
 import ItemList from "../components/ItemList";
 import ItemCategories from "../components/ItemCategories";
+import Slider from '../components/Slider';
 
 const ItemListContainer = (props) => {
 
@@ -57,15 +57,15 @@ useEffect(() => {
 
 
     return (
-        <div className="App">
+        <>
+        <Slider />
+        <div className="listContainer">
             <ItemCategories categories={categories} />
-            <h3>{props.greeting}</h3>
+            <h3>Productos</h3>
+            <p className="subtitle">Nuestros diseños / Plata 925</p>
             <ItemList items={itemsFiltered} />
-         {/*
-                <h3>{props.greeting}</h3>
-               {/* <ItemCount stock={stockActual} initial={1} onAdd={restarStock} />
-                <ItemList items={props.items} />*/}
         </div>
+        </>
     )
 };
 

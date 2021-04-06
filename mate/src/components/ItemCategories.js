@@ -11,4 +11,6 @@ function ItemCategories({ categories }) {
     )
 }
 
+
+
 export default ItemCategories;

@@ -23,14 +23,20 @@ function ItemDetailContainer() {
 
   return (
      <>
-            <div className="breadcrumbs">
-              <Link to="/">
-                <span>Volver</span>
-              </Link>
-            </div>
-            <div className="item-container" >
-              <ItemDetail item={item} />
-            </div>
+           {
+  item === ''
+    ? <p>Cargando</p>
+    : <div className={`item-detail-container ${item ? 'appear' : 'Loading...'}`}>
+        <div className="breadcrumbs">
+          <Link to="/">
+            <span>Volver</span>
+          </Link>
+        </div>
+        <div className="item-container" >
+          <ItemDetail item={item} id={id}/>
+        </div>
+    </div>
+}
     </>
   )
 };

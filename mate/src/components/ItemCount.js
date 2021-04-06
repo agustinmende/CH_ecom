@@ -1,13 +1,20 @@
-const ItemCount = ({ min=0, max, value=0, onAdd, onSubstract }) => {
+import { useState } from 'react';
+
+const ItemCount = ({ min = 0, max, value = 0, onAdd, onSubstract }) => {
+    const [_value, setValue] = useState(value);
+
+    const inputChangedHandler = (event) => {
+        setValue(event.target.value);
+    }
 
     return (
-        <form id="itemCount">
-            <div className="item">
-                <button onClick={(e) => onSubstract(e)} disabled={value <= min}>-</button>
-                <input  type="number" defaultValue={value} placeholder={value} ></input>
-                <button onClick={(e) => onAdd(e)} disabled={value >= max}>+</button>
-            </div>
-        </form>
+        <form className="item-count">
+        <div className="item">
+            <button className="minus" onClick={(e) => { onSubstract(e); setValue(_value - 1) }} disabled={_value <= min}>-</button>
+            <input className="input-number" type="number" value={_value} placeholder={_value} onChange={(event) => inputChangedHandler(event)}></input>
+            <button className="plus" onClick={(e) => { onAdd(e); setValue(_value + 1) }} disabled={_value >= max}>+</button>
+        </div>
+    </form>
     );
 };
 
