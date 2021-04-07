@@ -298,4 +298,65 @@ input[type=number] {
 }
 .cart-container .cart-total {
   float: right;
+  height: 150px;
 }
+
+/* Footer */
+#footer {
+  margin: 50px 0 0 0;
+}
+
+#footer .services {
+  display: flex;
+  width: 100%;
+  margin: 0 0 50px 0;
+}
+#footer .services div {
+  border: 1px solid grey;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+#footer .services h3 {
+  text-transform: uppercase;
+}
+
+#footer .bottom-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#footer .bottom-navbar h2 {
+  width: 40%;
+  text-transform: uppercase;
+  font-weight:lighter;
+  font-size: 1.9em;
+  line-height: 2.2em;
+  margin: 0;
+  padding: 0;
+}
+
+#footer .bottom-navbar h2 span {
+  font-weight: bold;
+  align-items: center;
+}
+
+#footer .bottom-navbar ul {
+  font-family: 'Lato', sans-serif;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#footer .bottom-navbar ul li a {
+  display: block;
+  color: rgb(155, 155, 155);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+

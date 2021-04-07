@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from "react-router-dom";
-
 import ItemDetail from "../components/ItemDetail";
+import Footer from '../components/Footer';
 
 
 function ItemDetailContainer() {
@@ -37,6 +37,7 @@ function ItemDetailContainer() {
               </div>
           </div>
       }
+      <Footer />
     </>
   )
 };

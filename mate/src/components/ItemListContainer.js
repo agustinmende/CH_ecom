@@ -3,6 +3,7 @@ import React, { useState, useEffect  } from 'react';
 import ItemList from "../components/ItemList";
 import ItemCategories from "../components/ItemCategories";
 import Slider from '../components/Slider';
+import Footer from '../components/Footer';
 
 const ItemListContainer = (props) => {
 
@@ -65,6 +66,7 @@ useEffect(() => {
             <p className="subtitle">Nuestros diseños / Plata 925</p>
             <ItemList items={itemsFiltered} />
         </div>
+        <Footer />
         </>
     )
 };
