@@ -36,3 +36,7 @@ Desafío: Sincronizar counter
 
 Desafío: CartContext
 
+## Entrega #10
+
+Desafío: Cart View
+
