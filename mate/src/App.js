@@ -7,9 +7,27 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
 import {CartProvider} from "./context/CartContext";
+import {getFirestore} from "./configs/Firebase";
 
 function App() {
+
+
+  useEffect(() => {
+    const db = getFirestore();
+    const categorias = db.collection('category');
+
+    categorias.get().then(res=> {
+      if(res.size > 0) {
+        res.docs.map(d => console.log({id: d.id, ...d.data()})
+        );}
+    })
+  }, [])
+
+
   const [items, setItems] = useState([]);
+
+  const script = document.createElement("script");    script.async = true;    script.src = "components/json-to-firestore.js";
+
   return (
 
 <div className="App">

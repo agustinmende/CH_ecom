@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from "react-router-dom";
 import ItemDetail from "../components/ItemDetail";
 import Footer from '../components/Footer';
+import { getFirestore } from '../configs/Firebase';
 
 
 function ItemDetailContainer() {
@@ -9,12 +10,10 @@ function ItemDetailContainer() {
   let { id } = useParams();
 
   const getItem = (id) => {
-    fetch(`https://coderhouse-a2dba-default-rtdb.firebaseio.com/items/${id}.json`)
-      .then(response => response.json())
-      .then((result) => setItem(result))
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+    const db = getFirestore();
+    db.collection('items').doc(id).get().then((snapshot) => {
+      setItem(snapshot.data());
+    });
   };
 
   useEffect(() => {
