@@ -8,6 +8,8 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import Cart from "./components/Cart";
 import {CartProvider} from "./context/CartContext";
 import {getFirestore} from "./configs/Firebase";
+import Checkout from "./components/Checkout";
+import Orders from "./components/Orders"
 
 function App() {
 
@@ -40,6 +42,12 @@ function App() {
             </Route>
             <Route path="/category/:id">
               <ItemListContainer />
+            </Route>
+            <Route path="/orders">
+              <Orders />
+            </Route>
+            <Route path="/checkout">
+              <Checkout />
             </Route>
             <Route path="/cart">
               <Cart />
