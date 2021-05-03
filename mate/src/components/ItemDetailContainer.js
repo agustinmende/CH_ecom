@@ -24,8 +24,8 @@ function ItemDetailContainer() {
      <>
       {
         item === ''
-          ? <p>Cargando</p>
-          : <div className={`item-detail-container ${item ? 'appear' : 'Loading...'}`}>
+          ? <p>Cargando...</p>
+          : <div>
               <div className="breadcrumbs">
                 <Link to="/">
                   <span>Volver</span>

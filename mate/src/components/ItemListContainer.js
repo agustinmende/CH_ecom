@@ -92,7 +92,7 @@ useEffect(() => {
                     itemsFiltered === 'Categoria no encontrada'
                         ? <h3>Categoria: {idCategory} </h3>
                         : itemsFiltered === ''
-                            ? <span>Cargando</span>
+                            ? <span>...</span>
                             : <>
                                 <p className="subtitle">Nuestros diseños / Plata 925</p>
                                 <ItemList items={itemsFiltered} />

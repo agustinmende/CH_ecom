@@ -6,7 +6,7 @@ import { getFirestore } from '../configs/Firebase';
 
 function Checkout(props) {
     const context = useContext(CartContext);
-    const [buyer, setBuyer] = useState({ name: '', phone: '', email: '' });
+    const [buyer, setBuyer] = useState({ name: '', phone: '', email: '', emailVerification: '' });
     const history = useHistory();
 
     const handleInputChange = (e) => {
@@ -21,11 +21,11 @@ function Checkout(props) {
         console.log(buyer);
 
         if(buyer.name === "") {
-            alert("El campo nombre es obligatorio");
+            alert("El campo Nombre es obligatorio");
             return null;
         }
         if(buyer.phone === "") {
-            alert("El campo Telefono es obligatorio");
+            alert("El campo Teléfono es obligatorio");
             return null;
         }
 
@@ -33,6 +33,11 @@ function Checkout(props) {
             {
                 alert("El email ingresado es invalido");
                 return null;
+            } else {
+                if (buyer.email !== buyer.emailVerification) {
+                    alert("Los emails ingresados no coinciden");
+                    return null;
+                }
             }
 
         const db = getFirestore();
@@ -100,6 +105,10 @@ function Checkout(props) {
                                 <label>Email</label>
                                 <input type="email" name="email" onChange={handleInputChange} id="email" placeholder="" />
                             </p>
+                            <p>
+                                <label>Repetir Email</label>
+                                <input type="email" name="emailVerification" onChange={handleInputChange} id="emailVerification" placeholder="" />
+                            </p>
                         </div>
 
                         <div className="cart-container" hidden={context.cart.length === 0}>
@@ -121,7 +130,7 @@ function Checkout(props) {
                     }
                     <div className="cart-total">
                             <p>Total: ${context.totalPrice}</p>
-                            <button className="" onClick={createOrder}> Finalizar compra </button>
+                            <button className="button" onClick={createOrder}> Finalizar compra </button>
                     </div>
             </div>
         </div>

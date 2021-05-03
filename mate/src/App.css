@@ -369,3 +369,8 @@ input[type=number] {
   display: block;
 }
 
+.button {
+  padding: 5px;
+  margin-top: 15px;
+}
+
