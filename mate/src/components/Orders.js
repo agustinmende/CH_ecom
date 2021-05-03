@@ -36,6 +36,7 @@ function Orders() {
                 <Link to="/cart" className="back-link">
                     Volver
                 </Link>
+                <h2>Mis Ordenes</h2>
             </div>
             <div className="checkout" >
             {
