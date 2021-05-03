@@ -3,8 +3,6 @@ import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 import { getFirestore } from '../configs/Firebase';
 
-
-
 function Orders() {
     const [orders, setOrders] = useState([])
     const db = getFirestore();
@@ -39,7 +37,7 @@ function Orders() {
                     Volver
                 </Link>
             </div>
-            <div className="checkout">
+            <div className="checkout" >
             {
                 (orders.length === 0)
                     ? <h2> Cargando...</h2>
@@ -67,7 +65,7 @@ function Orders() {
                                                 order.items.map(
                                                     (item) => {
                                                         return (
-                                                            <div className="cart-item">
+                                                            <div className="cart-item"  key={item.title}>
                                                                 <p><strong>Producto:</strong> {item.title} </p>
                                                                 <p><strong>Cantidad:</strong> {item.quantity}</p>
                                                                 <p><strong>Precio unitario:</strong> ${item.price} </p>

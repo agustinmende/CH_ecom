@@ -17,12 +17,26 @@ function Checkout(props) {
         })
     }
 
-
-
     const createOrder = () => {
 
-        const db = getFirestore();
+        console.log(buyer);
 
+        if(buyer.name == "") {
+            alert("El campo nombre es obligatorio");
+            return null;
+        }
+        if(buyer.phone == "") {
+            alert("El campo Telefono es obligatorio");
+            return null;
+        }
+
+        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(buyer.email) != true)
+            {
+                alert("El email ingresado es invalido");
+                return null;
+            }
+
+        const db = getFirestore();
         context.setUserDetails(buyer);
 
         let items = context.cart.map(
@@ -97,7 +111,6 @@ function Checkout(props) {
                                 return (
                                     <div className="cart-item" key={obj.item.id}>
                                         <img src={"/products/"+obj.item.pictureUrl} alt={obj.item.title} />
-                                        <h3>{obj.item.title}</h3>
                                         <p> <strong>Producto:</strong> {obj.item.title} </p>
                                         <p> <strong>Cantidad:</strong> {obj.quantity}</p>
                                         <p> <strong>Precio:</strong> ${obj.item.price} </p>
@@ -111,8 +124,6 @@ function Checkout(props) {
                             <p>Total: ${context.totalPrice}</p>
                             <button className="" onClick={createOrder}> Finalizar compra </button>
                     </div>
-
-                
             </div>
         </div>
 
