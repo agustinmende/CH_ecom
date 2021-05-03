@@ -89,7 +89,6 @@ function CartProvider({ defaultValue = [], children }) {
         let total = cart.reduce((acc, cur) => {
             return cur.quantity + acc
         }, 0);
-        //setTotalQty(total);
         return(total);
     }
     const setUserDetails = (userDetails) => {

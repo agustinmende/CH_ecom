@@ -46,7 +46,7 @@ function Cart(props) {
                         }
                         <div className="cart-total">
                             <p>Total: ${context.totalPrice}</p>
-                            <p><Link to="/checkout" className={`checkout-btn ${context.cart.length === 0 ? 'disabled' : ''}`}  >Continuar compra</Link></p>
+                            <p><Link to="/checkout">Continuar compra</Link></p>
                         </div>
             </div>
             </div>
