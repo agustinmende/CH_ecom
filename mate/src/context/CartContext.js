@@ -6,6 +6,8 @@ function CartProvider({ defaultValue = [], children }) {
     const [cart, setCart] = useState([]);
     const [totalQty, setTotalQty] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('userDetails')));
+
 
     const addItem = (e, item, quantity) => {
         e.preventDefault();
@@ -33,7 +35,6 @@ function CartProvider({ defaultValue = [], children }) {
         }
         getTotalPrice();
         getTotalQty();
-
     }
 
     const removeItem = (pos) => {
@@ -64,7 +65,6 @@ function CartProvider({ defaultValue = [], children }) {
     }
 
     const getItemQty = (id) => {
-
         const cartLenght = cart.length;
         if (cartLenght === 0) {
             return 0;
@@ -89,8 +89,20 @@ function CartProvider({ defaultValue = [], children }) {
         let total = cart.reduce((acc, cur) => {
             return cur.quantity + acc
         }, 0);
-        setTotalQty(total);
+        //setTotalQty(total);
         return(total);
+    }
+    const setUserDetails = (userDetails) => {
+        localStorage.setItem('userDetails',  JSON.stringify(userDetails));
+        setUser(userDetails);
+    }
+
+    const getUserDetails = () => {
+        if (user != '' && user != null) {
+            return(user);
+        } else {
+            return("");
+        }
     }
 
     useEffect(() => {
@@ -99,7 +111,7 @@ function CartProvider({ defaultValue = [], children }) {
     });
 
     return (
-        <CartContext.Provider value={{ cart, setCart, addItem, substractItem, removeItem, clear, isInCart, getItemQty, getTotalQty, totalQty, totalPrice }}>
+        <CartContext.Provider value={{ cart, setCart, addItem, substractItem, removeItem, clear, isInCart, getItemQty, getTotalQty, totalQty, totalPrice, setUserDetails, getUserDetails }}>
             {children}
         </CartContext.Provider>
     );

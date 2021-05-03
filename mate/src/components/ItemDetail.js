@@ -1,5 +1,5 @@
-import { useState, useContext, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { useState, useContext } from 'react';
+//import { Link } from "react-router-dom";
 import ItemCount from './ItemCount';
 import { CartContext } from '../context/CartContext';
 
@@ -21,11 +21,6 @@ function ItemDetail(props) {
         const [maxStock, setMaxStock] = useState(item.stock - stockInCart);
         const availableStock = maxStock - itemsQ;
 
-
-       // console.log("======");
-      //  console.log("maxStock: " + maxStock);
-      //  console.log("itemsQ: " + itemsQ);
-       // console.log("AvailableStock: " + availableStock);
 
     const Stock = () => {
         return (

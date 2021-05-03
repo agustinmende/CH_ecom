@@ -1,7 +1,6 @@
 import Item from "../components/Item";
 
 function ItemList (props) {
-console.log(props.items)
   return (
     <div id="productList">
        {

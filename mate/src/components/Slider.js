@@ -21,10 +21,10 @@ function Slider() {
         <div className="slide-container">
       <Fade {...fadeProperties}>
         <div className="each-fade">
-            <img src={fadeImages[0]} />
+            <img src={fadeImages[0]} alt="Fierro Santo"/>
         </div>
         <div className="each-fade">
-            <img src={fadeImages[1]} />
+            <img src={fadeImages[1]} alt="Fierro Santo" />
         </div>
       </Fade>
     </div>

@@ -1,13 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
+import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 import { getFirestore } from '../configs/Firebase';
+
+
 
 function Orders() {
     const [orders, setOrders] = useState([])
     const db = getFirestore();
+    const context = useContext(CartContext);
 
     const getAll = () => {
-        const itemsCollection = db.collection('orders');
+        const itemsCollection = db.collection('orders').where("buyer.email", "==", context.getUserDetails().email);
         itemsCollection.get().then((querySnapshot) => {
             if (querySnapshot.size === 0) {
                 console.log('No orders');
@@ -23,16 +27,6 @@ function Orders() {
         });
     };
 
-    function formatDate(dateFirestore) {
-        let timestamp= dateFirestore.seconds * 1000 + dateFirestore.nanoseconds /1000000;
-        let dateObj = new Date(timestamp);
-        let date = dateObj.getDate();
-        let month = dateObj.getMonth() + 1;
-        let year = dateObj.getFullYear();
-        let fullDate = `${date}/${month}/${year}`;
-        return fullDate;
-    }
-
     function deleteOrder(id) {
         const order = db.collection("orders").doc(id);
         order.delete();
@@ -42,6 +36,7 @@ function Orders() {
 
     useEffect(() => {
         getAll();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -76,7 +71,7 @@ function Orders() {
                                                     <b>Email: </b> {order.buyer.email}
                                                 </li>
                                                 <li>
-                                                    <b>Fecha de compra: </b> { formatDate(order.date)}
+                                                    <b>Fecha de compra: </b> { order.date.toDate().toString()}
                                                 </li>
                                             </ul>
                                             <li>

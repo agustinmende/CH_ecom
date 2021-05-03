@@ -3,7 +3,7 @@ import { NavLink} from 'react-router-dom';
 const Footer = () => {
   return (
   <div id="footer">
-   <div className="services">   
+   <div className="services">
         <div>
             <h3>Envio Gratis</h3>
             <p>Por compras superiores a $10.000 en CABA</p>

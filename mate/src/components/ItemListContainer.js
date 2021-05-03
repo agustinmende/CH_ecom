@@ -29,7 +29,7 @@ const getAll = () => {
     }).catch((error) => {
         console.error("Error:", error);
     }).finally(() => {
-        console.log("Cargado");
+        //console.log("Cargado");
     });
 
     const categoriesCollection = db.collection('categories');

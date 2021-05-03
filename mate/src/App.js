@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import './App.css';
 import NavBar from './components/NavBar';
@@ -20,13 +20,13 @@ function App() {
 
     categorias.get().then(res=> {
       if(res.size > 0) {
-        res.docs.map(d => console.log({id: d.id, ...d.data()})
-        );}
+        //res.docs.map(d => console.log({id: d.id, ...d.data()}))
+        ;}
     })
   }, [])
 
 
-  const [items, setItems] = useState([]);
+ // const [items, setItems] = useState([]);
 
   const script = document.createElement("script");    script.async = true;    script.src = "components/json-to-firestore.js";
 
