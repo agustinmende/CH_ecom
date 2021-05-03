@@ -8,7 +8,6 @@ function Checkout(props) {
     const context = useContext(CartContext);
     const [buyer, setBuyer] = useState({ name: '', phone: '', email: '' });
     const history = useHistory();
-   // const activeUser = context.getUserDetails();
 
     const handleInputChange = (e) => {
         setBuyer({
@@ -21,16 +20,16 @@ function Checkout(props) {
 
         console.log(buyer);
 
-        if(buyer.name == "") {
+        if(buyer.name === "") {
             alert("El campo nombre es obligatorio");
             return null;
         }
-        if(buyer.phone == "") {
+        if(buyer.phone === "") {
             alert("El campo Telefono es obligatorio");
             return null;
         }
 
-        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(buyer.email) != true)
+        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(buyer.email) !== true)
             {
                 alert("El email ingresado es invalido");
                 return null;

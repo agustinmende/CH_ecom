@@ -7,8 +7,8 @@ const NavBar = () => {
       <h1>Fierro<span>Santo</span></h1>
       <ul>
           <li><NavLink to="/">Inicio</NavLink></li>
-          <li><a href="#nogo">Metodos de pago</a></li>
-          <li><a href="#nogo">Contacto</a></li>
+          <li><NavLink to="/pagos">Metodos de pago</NavLink></li>
+          <li><NavLink to="/contacto">Contacto</NavLink></li>
       </ul>
       <CartWidget/>
   </div>

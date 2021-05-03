@@ -31,7 +31,7 @@ function Orders() {
     }, []);
 
     return (
-        <div >
+        <>
             <div className="breadcrumb">
                 <Link to="/cart" className="back-link">
                     Volver
@@ -50,7 +50,7 @@ function Orders() {
                                             <div key={order.id}>
 
                                                 <h3>Detalles de la compra</h3>
-                                                <p><strong>Orden #:</strong> {order.id} </p>
+                                                <p ><strong>Orden #:</strong> {order.id} </p>
 
                                                 <p><strong>Nombre:</strong>  {order.buyer.name}</p>
 
@@ -65,7 +65,7 @@ function Orders() {
                                                 order.items.map(
                                                     (item) => {
                                                         return (
-                                                            <div className="cart-item"  key={item.title}>
+                                                            <div className="cart-item"  key={item.id}>
                                                                 <p><strong>Producto:</strong> {item.title} </p>
                                                                 <p><strong>Cantidad:</strong> {item.quantity}</p>
                                                                 <p><strong>Precio unitario:</strong> ${item.price} </p>
@@ -87,7 +87,7 @@ function Orders() {
                     </div>
             }
             </div>
-        </div>
+        </>
     );
 }
 

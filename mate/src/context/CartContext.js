@@ -98,7 +98,7 @@ function CartProvider({ defaultValue = [], children }) {
     }
 
     const getUserDetails = () => {
-        if (user != '' && user != null) {
+        if (user !== '' && user !== null) {
             return(user);
         } else {
             return("");
