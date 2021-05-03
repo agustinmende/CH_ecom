@@ -17,9 +17,6 @@ function Checkout(props) {
     }
 
     const createOrder = () => {
-
-        console.log(buyer);
-
         if(buyer.name === "") {
             alert("El campo Nombre es obligatorio");
             return null;
