@@ -27,13 +27,6 @@ function Orders() {
         });
     };
 
-    function deleteOrder(id) {
-        const order = db.collection("orders").doc(id);
-        order.delete();
-        let updatedOrders = orders.filter((order) => { return id !== order.id })
-        setOrders(updatedOrders);
-    }
-
     useEffect(() => {
         getAll();
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -46,63 +39,56 @@ function Orders() {
                     Volver
                 </Link>
             </div>
+            <div className="checkout">
             {
                 (orders.length === 0)
-                    ? <h2> No hay compras disponibles para mostrar...</h2>
+                    ? <h2> Cargando...</h2>
                     : <div>
                         {
                             orders.map(
                                 (order) => {
                                     return (
-                                        <ul key={order.id}>
-                                            <button onClick={() => { deleteOrder(order.id) }}>
-                                                Borrar
-                                            </button>
-                                            <h4>Compra</h4>
-                                            <p >({order.id}) </p>
-                                            <ul>
-                                                <li>
-                                                    <b>Nombre: </b> {order.buyer.name}
-                                                </li>
-                                                <li>
-                                                    <b>Telefono: </b> {order.buyer.phone}
-                                                </li>
-                                                <li>
-                                                    <b>Email: </b> {order.buyer.email}
-                                                </li>
-                                                <li>
-                                                    <b>Fecha de compra: </b> { order.date.toDate().toString()}
-                                                </li>
-                                            </ul>
-                                            <li>
-                                                <span >Producto</span>
-                                                <span>Cantidad</span>
-                                                <span >Precio </span>
-                                                <span>Subtotal:</span>
-                                            </li>
+                                        <>
+                                            <div key={order.id}>
+
+                                                <h3>Detalles de la compra</h3>
+                                                <p><strong>Orden #:</strong> {order.id} </p>
+
+                                                <p><strong>Nombre:</strong>  {order.buyer.name}</p>
+
+                                                <p><strong>Telefono:</strong> {order.buyer.phone}</p>
+
+                                                <p><strong>Email:</strong> {order.buyer.email}</p>
+
+                                                <p><strong>Fecha de compra:</strong> { order.date.toDate().toString()}</p>
+
+                                            </div>
                                             {
                                                 order.items.map(
                                                     (item) => {
                                                         return (
-                                                            <li className="order__item" key={item.id}>
-                                                                <span> {item.title} </span>
-                                                                <span> {item.quantity}</span>
-                                                                <span> $ {item.price} </span>
-                                                                <span> $ {item.price * item.quantity}</span>
-                                                            </li>
+                                                            <div className="cart-item">
+                                                                <p><strong>Producto:</strong> {item.title} </p>
+                                                                <p><strong>Cantidad:</strong> {item.quantity}</p>
+                                                                <p><strong>Precio unitario:</strong> ${item.price} </p>
+                                                                <p><strong>Total:</strong> ${item.price * item.quantity}</p>
+                                                            </div>
                                                         );
                                                     }
                                                 )
                                             }
-                                            <li><span>Total: </span> <span> $ {order.total}</span> </li>
-                                        </ul>
+                                            <div className="cart-total">
+                                                <p>Total: ${order.total}</p>
+                                            </div>
+
+                                     </>
                                     );
                                 }
                             )
                         }
-                        <button className={`btn--big ${orders.length > 0 ? '' : 'disabled'}`} > Finalizar </button>
                     </div>
             }
+            </div>
         </div>
     );
 }

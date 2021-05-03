@@ -72,42 +72,47 @@ function Checkout(props) {
                    Volver
                 </Link>
             </div>
-            <div hidden={context.cart.length === 0}>
 
+                        <div className="checkout">
+                            <h2>Ingresá tus datos</h2>
+                            <p>
+                                <label>Nombre</label>
+                                <input type="text" name="name" onChange={handleInputChange} id="name" placeholder=""   />
+                            </p>
+                            <p>
+                                <label>Telefono</label>
+                                <input type="text" name="phone" onChange={handleInputChange} id="tel" placeholder="" />
+                            </p>
+                            <p>
+                                <label>Email</label>
+                                <input type="email" name="email" onChange={handleInputChange} id="email" placeholder="" />
+                            </p>
+                        </div>
 
-                        <p>
-                            <label>Nombre</label>
-                            <input type="text" name="name" onChange={handleInputChange} id="name" placeholder=""   />
-                        </p>
-                        <p>
-                            <label>Telefono</label>
-                            <input type="text" name="phone" onChange={handleInputChange} id="tel" placeholder="" />
-                        </p>
-                        <p>
-                            <label>Email</label>
-                            <input type="email" name="email" onChange={handleInputChange} id="email" placeholder="" />
-                        </p>
+                        <div className="cart-container" hidden={context.cart.length === 0}>
 
-
-
-                <ul>
                     {
                         context.cart.map(
                             (obj) => {
                                 return (
-                                    <li key={obj.item.id}>
-                                        <span> Producto: {obj.item.title} </span>
-                                        <span> Cantidad {obj.quantity}</span>
-                                        <span> Precio $ {obj.item.price} </span>
-                                        <span> Total $ {obj.item.price * obj.quantity}</span>
-                                    </li>
+                                    <div className="cart-item" key={obj.item.id}>
+                                        <img src={"/products/"+obj.item.pictureUrl} alt={obj.item.title} />
+                                        <h3>{obj.item.title}</h3>
+                                        <p> <strong>Producto:</strong> {obj.item.title} </p>
+                                        <p> <strong>Cantidad:</strong> {obj.quantity}</p>
+                                        <p> <strong>Precio:</strong> ${obj.item.price} </p>
+                                        <p> <strong>Subtotal:</strong> ${obj.item.price * obj.quantity}</p>
+                                    </div>
                                 );
                             }
                         )
                     }
-                    <li><span>Total: </span> <span> $ {context.totalPrice}</span> </li>
-                </ul>
-                <button className="" onClick={createOrder}> Finalizar compra </button>
+                    <div className="cart-total">
+                            <p>Total: ${context.totalPrice}</p>
+                            <button className="" onClick={createOrder}> Finalizar compra </button>
+                    </div>
+
+                
             </div>
         </div>
 
