@@ -1,5 +1,4 @@
 import { useState, useContext } from 'react';
-//import { Link } from "react-router-dom";
 import ItemCount from './ItemCount';
 import { CartContext } from '../context/CartContext';
 
@@ -31,12 +30,9 @@ function ItemDetail(props) {
             </>
         )
     }
-
-
     const NoStock = () => {
         return <h3>No hay stock disponible</h3>
     }
-
     const onAdd = (e) => {
         e.preventDefault();
         if (itemsQ > maxStock) {
@@ -64,7 +60,6 @@ function ItemDetail(props) {
         setMaxStock(maxStock - itemsQ);
         setItemsQ(0);
     };
-
 
     return (
         <div className="producto">

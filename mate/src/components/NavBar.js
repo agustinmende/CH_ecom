@@ -4,7 +4,7 @@ import CartWidget from '../components/CartWidget';
 const NavBar = () => {
   return (
   <div className="NavBar">
-      <h1>Fierro<span>Santo</span></h1>
+      <h1><NavLink to="/">Fierro<span>Santo</span></NavLink></h1>
       <ul>
           <li><NavLink to="/">Inicio</NavLink></li>
           <li><NavLink to="/pagos">Metodos de pago</NavLink></li>

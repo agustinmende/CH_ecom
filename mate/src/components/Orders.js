@@ -7,9 +7,13 @@ function Orders() {
     const [orders, setOrders] = useState([])
     const db = getFirestore();
     const context = useContext(CartContext);
+    let userEmail = "";
 
     const getAll = () => {
-        const itemsCollection = db.collection('orders').where("buyer.email", "==", context.getUserDetails().email);
+        console.log(context.getUserDetails().email);
+
+        context.getUserDetails().email !== undefined ? userEmail = context.getUserDetails().email : userEmail = "";
+        const itemsCollection = db.collection('orders').where("buyer.email", "==", userEmail);
         itemsCollection.get().then((querySnapshot) => {
             if (querySnapshot.size === 0) {
                 console.log('No orders');
@@ -33,7 +37,7 @@ function Orders() {
     return (
         <>
             <div className="breadcrumb">
-                <Link to="/cart" className="back-link">
+                <Link to="/" className="back-link">
                     Volver
                 </Link>
                 <h2>Mis Ordenes</h2>
@@ -42,25 +46,19 @@ function Orders() {
             {
                 (orders.length === 0)
                     ? <h2> Cargando...</h2>
-                    : <div>
+                    : <>
                         {
                             orders.map(
                                 (order) => {
                                     return (
-                                        <>
-                                            <div key={order.id}>
-
+                                        <div key={order.id} className="order" id={order.id}>
+                                            <div>
                                                 <h3>Detalles de la compra</h3>
-                                                <p ><strong>Orden #:</strong> {order.id} </p>
-
+                                                <p ><strong>Número de Orden:</strong> {order.id} </p>
+                                                <p><strong>Fecha de compra:</strong> { order.date.toDate().toLocaleDateString()}</p>
                                                 <p><strong>Nombre:</strong>  {order.buyer.name}</p>
-
-                                                <p><strong>Telefono:</strong> {order.buyer.phone}</p>
-
+                                                <p><strong>Teléfono:</strong> {order.buyer.phone}</p>
                                                 <p><strong>Email:</strong> {order.buyer.email}</p>
-
-                                                <p><strong>Fecha de compra:</strong> { order.date.toDate().toString()}</p>
-
                                             </div>
                                             {
                                                 order.items.map(
@@ -76,16 +74,14 @@ function Orders() {
                                                     }
                                                 )
                                             }
-                                            <div className="cart-total">
-                                                <p>Total: ${order.total}</p>
-                                            </div>
+                                            <p className="orderTotal">Total de la orden: ${order.total}</p>
 
-                                     </>
+                                     </div>
                                     );
                                 }
                             )
                         }
-                    </div>
+                   </>
             }
             </div>
         </>

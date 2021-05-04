@@ -18,9 +18,7 @@ const Footer = () => {
         <div className="bottom-navbar">
             <h2>Fierro<span>Santo</span></h2>
 
-            <p><a href="#root">TOP</a></p>
-
-            <ul>
+           <ul>
                 <li><NavLink to="/">Inicio</NavLink></li>
                 <li><NavLink to="/pagos">Metodos de pago</NavLink></li>
                 <li><NavLink to="/contacto">Contacto</NavLink></li>

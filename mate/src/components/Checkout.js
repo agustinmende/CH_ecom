@@ -15,7 +15,6 @@ function Checkout(props) {
             [e.target.name]: e.target.value
         })
     }
-
     const createOrder = () => {
         if(buyer.name === "") {
             alert("El campo Nombre es obligatorio");
@@ -25,7 +24,6 @@ function Checkout(props) {
             alert("El campo Teléfono es obligatorio");
             return null;
         }
-
         if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(buyer.email) !== true)
             {
                 alert("El email ingresado es invalido");
@@ -36,7 +34,6 @@ function Checkout(props) {
                     return null;
                 }
             }
-
         const db = getFirestore();
         context.setUserDetails(buyer);
 
@@ -66,7 +63,6 @@ function Checkout(props) {
                     batch.update(itemsRef.doc(obj.item.id), { stock: obj.item.stock });
                 }
             )
-
             batch.commit().then(() => {
                 context.clear();
                 setBuyer({ name: '', phone: '', email: '' });
@@ -78,8 +74,6 @@ function Checkout(props) {
         });
     }
 
-
-
     return (
         <div >
             <div className="breadcrumb">
@@ -87,7 +81,6 @@ function Checkout(props) {
                    Volver
                 </Link>
             </div>
-
                         <div className="checkout">
                             <h2>Ingresá tus datos</h2>
                             <p>
