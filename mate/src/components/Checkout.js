@@ -1,5 +1,5 @@
 import { CartContext } from '../context/CartContext';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import firebase from "firebase/app";
 import { getFirestore } from '../configs/Firebase';
@@ -8,6 +8,13 @@ function Checkout(props) {
     const context = useContext(CartContext);
     const [buyer, setBuyer] = useState({ name: '', phone: '', email: '', emailVerification: '' });
     const history = useHistory();
+    const [nameError, setNameError] = useState(false);
+    const [phoneError, setphoneError] = useState(false);
+    const [emailError, setEmailError] = useState(false);
+    const [emailVerificationError, setEmailVerificationError] = useState(false);
+
+    const firstRender = useRef(true);
+
 
     const handleInputChange = (e) => {
         setBuyer({
@@ -15,25 +22,44 @@ function Checkout(props) {
             [e.target.name]: e.target.value
         })
     }
+
+    useEffect(() => {
+        if (firstRender.current) {
+            firstRender.current = false
+            return
+        }
+        if( nameError === false && phoneError === false && emailError === false && emailVerificationError === false) {
+            createOrder()
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [nameError,phoneError,emailError,emailVerificationError ])
+
+
+const validateFields = () => {
+    if(buyer.name === "") {
+        setNameError(true);
+    } else {
+        setNameError(false);
+    }
+    if(buyer.phone === "") {
+        setphoneError(true);
+    } else {
+        setphoneError(false);
+    }
+    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(buyer.email) !== true)
+        {
+            setEmailError(true);
+        } else {
+            setEmailError(false);
+        }
+    if (buyer.email !== buyer.emailVerification) {
+        setEmailVerificationError(true);
+        } else {
+            setEmailVerificationError(false);
+        }
+    }
+
     const createOrder = () => {
-        if(buyer.name === "") {
-            alert("El campo Nombre es obligatorio");
-            return null;
-        }
-        if(buyer.phone === "") {
-            alert("El campo Teléfono es obligatorio");
-            return null;
-        }
-        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(buyer.email) !== true)
-            {
-                alert("El email ingresado es invalido");
-                return null;
-            } else {
-                if (buyer.email !== buyer.emailVerification) {
-                    alert("Los emails ingresados no coinciden");
-                    return null;
-                }
-            }
         const db = getFirestore();
         context.setUserDetails(buyer);
 
@@ -85,19 +111,19 @@ function Checkout(props) {
                             <h2>Ingresá tus datos</h2>
                             <p>
                                 <label>Nombre</label>
-                                <input type="text" name="name" onChange={handleInputChange} id="name" placeholder=""   />
+                                <input className={nameError?"inputError":""} type="text" name="name" onChange={handleInputChange} id="name" placeholder=""   />
                             </p>
                             <p>
                                 <label>Telefono</label>
-                                <input type="text" name="phone" onChange={handleInputChange} id="tel" placeholder="" />
+                                <input className={phoneError?"inputError":""} type="text" name="phone" onChange={handleInputChange} id="tel" placeholder="" />
                             </p>
                             <p>
                                 <label>Email</label>
-                                <input type="email" name="email" onChange={handleInputChange} id="email" placeholder="" />
+                                <input className={emailError?"inputError":""} type="email" name="email" onChange={handleInputChange} id="email" placeholder="" />
                             </p>
                             <p>
                                 <label>Repetir Email</label>
-                                <input type="email" name="emailVerification" onChange={handleInputChange} id="emailVerification" placeholder="" />
+                                <input className={emailVerificationError?"inputError":""} type="email" name="emailVerification" onChange={handleInputChange} id="emailVerification" placeholder="" />
                             </p>
                         </div>
 
@@ -120,7 +146,7 @@ function Checkout(props) {
                     }
                     <div className="cart-total">
                             <p>Total: ${context.totalPrice}</p>
-                            <button className="button" onClick={createOrder}> Finalizar compra </button>
+                            <button className="button" onClick={validateFields}> Finalizar compra </button>
                     </div>
             </div>
         </div>

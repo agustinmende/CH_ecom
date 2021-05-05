@@ -441,4 +441,7 @@ input[type=number] {
  padding: 0;
  text-decoration: underline;
 }
+.inputError {
+  border: 1px solid red;
+}
 
