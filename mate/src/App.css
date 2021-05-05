@@ -102,9 +102,11 @@ h1 span {
 
 
 .breadcrumbs a {
-  color:rgb(97, 124, 180);
   margin: 10px 0 10px 0;
   display: block;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
 
 }
 /* Slider */
@@ -216,11 +218,11 @@ input[type=number] {
   display: flex;
 }
 .producto img {
-  width: 30vw;
+  width: 50vw;
 
 }
 .producto .opciones-compra {
-  width: 60vw;
+  width: 40vw;
   font-family: 'Lato', sans-serif;
   margin: 0 0 0 10px;
   padding: 0 0 0 20px;
@@ -228,7 +230,31 @@ input[type=number] {
 }
 .producto .opciones-compra h3 {
   padding: 0 ;
+  font-size: 1.6em;
+  text-transform: uppercase;
+}
 
+.producto .opciones-compra p {
+  color: rgb(22, 22, 22);
+}
+.producto .opciones-compra .price {
+  color: #ccc;
+  font-size: 1.2em;
+}
+.producto .opciones-compra .button {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 1em;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  padding: 10px;
+  border: none;
+}
+.button:hover{
+  cursor: pointer;
+}
+.producto .opciones-compra .nostock {
+  font-weight: bold;
 }
 .item-categories {
   margin: 20px 0 20px 0;
@@ -307,6 +333,27 @@ input[type=number] {
  .cart-total {
   float: right;
   height: 150px;
+}
+.cart-total a {
+  display: block;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 1em;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  padding: 10px;
+  border: none;
+  text-decoration: none;
+}
+.cart-total .button {
+  display: block;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 1em;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  padding: 10px;
+  border: none;
 }
 
 /* Footer */

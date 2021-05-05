@@ -76,9 +76,9 @@ function Checkout(props) {
 
     return (
         <div >
-            <div className="breadcrumb">
+            <div className="breadcrumbs">
                 <Link to="/cart">
-                   Volver
+                <span>← Volver</span>
                 </Link>
             </div>
                         <div className="checkout">

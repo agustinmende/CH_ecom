@@ -20,7 +20,7 @@ function Cart(props) {
             <div >
                 <div className="breadcrumbs">
                     <Link to="/">
-                    <span>Volver</span>
+                    <span>← Volver</span>
                     </Link>
                 </div>
                 <div className="appear" hidden={context.cart.length !== 0}>

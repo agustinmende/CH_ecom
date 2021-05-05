@@ -4,7 +4,6 @@ import ItemList from "../components/ItemList";
 import ItemCategories from "../components/ItemCategories";
 import Slider from '../components/Slider';
 import Footer from '../components/Footer';
-
 import { getFirestore } from '../configs/Firebase';
 
 const ItemListContainer = (props) => {
@@ -46,8 +45,6 @@ const getAll = () => {
     });
 };
 
-
-
 const filterByCategory = (_category, _items) => {
     if (_items !== '') {
         if (_category !== undefined) {
@@ -74,7 +71,6 @@ useEffect(() => {
 useEffect(() => {
     getAll();
 }, []);
-
 
     return (
         <>

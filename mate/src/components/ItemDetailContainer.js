@@ -28,7 +28,7 @@ function ItemDetailContainer() {
           : <div>
               <div className="breadcrumbs">
                 <Link to="/">
-                  <span>Volver</span>
+                  <span>← Volver</span>
                 </Link>
               </div>
               <div className="item-container" >

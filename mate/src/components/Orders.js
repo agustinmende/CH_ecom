@@ -36,9 +36,9 @@ function Orders() {
 
     return (
         <>
-            <div className="breadcrumb">
+            <div className="breadcrumbs">
                 <Link to="/" className="back-link">
-                    Volver
+                <span>← Volver</span>
                 </Link>
                 <h2>Mis Ordenes</h2>
             </div>

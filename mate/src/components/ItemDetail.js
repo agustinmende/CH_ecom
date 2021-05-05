@@ -31,7 +31,7 @@ function ItemDetail(props) {
         )
     }
     const NoStock = () => {
-        return <h3>No hay stock disponible</h3>
+        return <p className="nostock">No hay stock disponible</p>
     }
     const onAdd = (e) => {
         e.preventDefault();
@@ -66,9 +66,8 @@ function ItemDetail(props) {
                 <img src={"/products/"+item.pictureUrl} alt={item.title} />
                     <div className="opciones-compra">
                         <h3>{item.title}</h3>
-                        <p>{item.description}</p>
+                        <p className="price">${item.price}</p>
                         <p>{item.fullDescription}</p>
-                        <span>Precio: ${item.price}</span>
                         <IsAvailable />
                     </div>
         </div>
