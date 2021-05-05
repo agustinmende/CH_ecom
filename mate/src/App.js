@@ -9,7 +9,9 @@ import Cart from "./components/Cart";
 import {CartProvider} from "./context/CartContext";
 import {getFirestore} from "./configs/Firebase";
 import Checkout from "./components/Checkout";
-import Orders from "./components/Orders"
+import Orders from "./components/Orders";
+import Pagos from "./components/Pagos";
+import Contacto from "./components/Contacto";
 
 function App() {
 
@@ -54,6 +56,12 @@ function App() {
             </Route>
             <Route path="/item/:id">
               <ItemDetailContainer />
+            </Route>
+            <Route path="/pagos">
+              <Pagos />
+            </Route>
+            <Route path="/contacto">
+              <Contacto />
             </Route>
           </Switch>
         </BrowserRouter>
