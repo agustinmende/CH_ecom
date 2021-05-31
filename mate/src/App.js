@@ -2,6 +2,7 @@ import React, {useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import './App.css';
 import NavBar from './components/NavBar';
+import TopBar from './components/TopBar';
 
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from "./components/ItemDetailContainer";
@@ -38,6 +39,7 @@ function App() {
 <CartProvider>
 <BrowserRouter>
           <NavBar />
+          <TopBar />
           <Switch>
             <Route exact path="/">
               <ItemListContainer />

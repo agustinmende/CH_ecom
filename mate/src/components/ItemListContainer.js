@@ -3,6 +3,7 @@ import React, { useState, useEffect  } from 'react';
 import ItemList from "../components/ItemList";
 import ItemCategories from "../components/ItemCategories";
 import Slider from '../components/Slider';
+import HomeBanner from '../components/HomeBanner';
 import Footer from '../components/Footer';
 import { getFirestore } from '../configs/Firebase';
 
@@ -74,7 +75,7 @@ useEffect(() => {
 
     return (
         <>
-            <Slider />
+            <HomeBanner />
             <div className="listContainer">
                 {
                     categories === ''
