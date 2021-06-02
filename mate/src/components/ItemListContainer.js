@@ -7,6 +7,31 @@ import HomeBanner from '../components/HomeBanner';
 import Footer from '../components/Footer';
 import { getFirestore } from '../configs/Firebase';
 
+
+
+
+import { Fullpage, Slide, HorizontalSlider } from 'fullpage-react';
+
+const fullPageOptions = {
+  // for mouse/wheel events
+  // represents the level of force required to generate a slide change on non-mobile, 10 is default
+  scrollSensitivity: 7,
+
+  // for touchStart/touchEnd/mobile scrolling
+  // represents the level of force required to generate a slide change on mobile, 10 is default
+  touchSensitivity: 7,
+  scrollSpeed: 500,
+  hideScrollBars: true,
+  enableArrowKeys: true
+};
+
+
+
+
+
+
+
+
 const ItemListContainer = (props) => {
 
 let [categories, setCategories] = useState('');
@@ -73,29 +98,39 @@ useEffect(() => {
     getAll();
 }, []);
 
+const slides = [
+    <Slide><HomeBanner /></Slide>,
+    <Slide>
+        <div className="listContainer">
+              {
+                  categories === ''
+                      ? <span >Cargando</span>
+                      : <>
+                          < ItemCategories categories={categories} />
+                          <h3>Productos</h3>
+                      </>
+              }
+              {
+                  itemsFiltered === 'Categoria no encontrada'
+                      ? <h3>Categoria: {idCategory} </h3>
+                      : itemsFiltered === ''
+                          ? <span>...</span>
+                          : <>
+                              <p className="subtitle">Nuestros diseños / Plata 925</p>
+                              <ItemList items={itemsFiltered} />
+                          </>
+              }
+          </div>
+    </Slide>
+  ];
+  
+  fullPageOptions.slides = slides;
+
     return (
         <>
-            <HomeBanner />
-            <div className="listContainer">
-                {
-                    categories === ''
-                        ? <span >Cargando</span>
-                        : <>
-                            < ItemCategories categories={categories} />
-                            <h3>Productos</h3>
-                        </>
-                }
-                {
-                    itemsFiltered === 'Categoria no encontrada'
-                        ? <h3>Categoria: {idCategory} </h3>
-                        : itemsFiltered === ''
-                            ? <span>...</span>
-                            : <>
-                                <p className="subtitle">Nuestros diseños / Plata 925</p>
-                                <ItemList items={itemsFiltered} />
-                            </>
-                }
-            </div>
+            <Fullpage {...fullPageOptions} />
+            
+            
             <Footer />
         </>
     )
