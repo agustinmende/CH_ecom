@@ -1,8 +1,9 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
+import { NavLink} from 'react-router-dom';
 //import { HeaderWrapper } from "./styles/Header"
-import NavBar from "./NavBar"
+import NavBar from "./NavBar";
 import TopBar from './TopBar';
-import MenuButton from "./MenuButton"
+import MenuButton from "./MenuButton";
 
 function Header() {
   const [open, setOpen] = useState(false)
@@ -13,10 +14,17 @@ function Header() {
 
   return (
     <div>
-      <h2>Logo</h2>
-      <NavBar open={open} />
-      <TopBar />
-      <MenuButton open={open} handleClick={handleClick} />
+
+        <div className="NavBar">
+            <h1><NavLink to="/"><img src={"/images/logo.png"} alt={""} /></NavLink></h1>
+            <MenuButton open={open} handleClick={handleClick} />
+            <div className="nav_button"><img src={"/images/nav_button.png"} alt={""} /></div>
+            <NavBar open={open} />
+        </div>
+
+      
+        <TopBar />
+        
     </div>
   )
 }

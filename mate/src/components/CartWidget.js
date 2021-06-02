@@ -13,7 +13,7 @@ function CartWidget () {
             <div id="cart-widget">
             <NavLink to="/cart">
                     <span className={stockInCart > 0 ? 'full':'empty'}>{stockInCart}</span>
-                    <img src="/images/navbar-cart.png" alt="Shopping cart" />
+                    <img src="/images/top_nav_cart.png" alt="Shopping cart" />
                 </NavLink>
             </div>
         </>

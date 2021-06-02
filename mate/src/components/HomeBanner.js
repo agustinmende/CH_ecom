@@ -11,7 +11,11 @@ function HomeBanner() {
 
     return (
         <div className="home_banner">
-            <div className="logo"><img src={"/images/home_logo.png"} alt={""} /></div>
+            <div className="home_banner_w">
+                <div className="logo"><img src={"/images/home_logo.png"} alt={""} /></div>
+                <span className="downpage"><img src={"/images/home_downpage.png"} alt={""} /></span>
+            </div>
+            
         </div>
     );
 };

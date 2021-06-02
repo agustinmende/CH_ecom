@@ -69,26 +69,30 @@ h1 span {
   padding: 0;
   overflow: hidden;
   width: 50%;
-  display: flex;
+  display: block;
   justify-content: space-between;
   align-items: center;
   text-transform: uppercase;
-  display: none;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0,-50%);
 }
 
 .NavBar li a {
   display: block;
-  color: black;
-  text-align: center;
+  color: #fff;
+  text-align: left;
   padding: 14px 16px;
   text-decoration: none;
+  font-size: 3vw;
 }
 
 .NavBar li a:hover {
-  border-bottom: 5px solid black;
+  border: none;
 }
 .NavBar li a.active {
-  border-bottom: 5px solid black;
+  border: none;
 }
 
 
@@ -120,7 +124,7 @@ h1 span {
 
 /* Top Bar  */
 .TopBar {
-  display: flex;
+  display: block;
   justify-content: space-between;
   height: 78px;
   border-top: 1px solid #e5e5e5;
@@ -132,17 +136,25 @@ h1 span {
   margin-left: 6vw;
   position: fixed;
   z-index: 2;
-  width: 100%;
+  width: 94vw;
+  text-align: right;
 }
 
 
 #cart-widget {
-  display: flex;
+  display: inline-block;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  margin-right: 10px;
+  margin-right: 5vw;
+  margin-top: .2vw;
+  width: 3vw;
 }
+
+#cart-widget img {
+  width: 100%;
+}
+
 #cart-widget span.full {
   display: block;
   position: absolute;
@@ -203,9 +215,7 @@ h1 span {
   margin-left: 6vw;
 }
 
-.home_banner .logo {
-  text-align: center;
-  padding: 0;
+.home_banner .home_banner_w {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -213,7 +223,23 @@ h1 span {
   width: 30%;
 }
 
+.home_banner .logo {
+  text-align: center;
+  padding: 0;
+  
+}
+
 .home_banner .logo img {
+  width: 100%;
+}
+
+.home_banner .downpage {
+  width: 2.5vw;
+  display: block;
+  margin: 5vw auto 0;
+}
+
+.home_banner .downpage img {
   width: 100%;
 }
 
