@@ -6,6 +6,8 @@ body {
   font-family: 'Playfair Display', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #000;
+  color: #fff;
 }
 /* app */
 .App {
@@ -140,6 +142,20 @@ h1 span {
   text-align: right;
 }
 
+.TopBar .instagram {
+  display: inline-block;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-right: .5vw;
+  margin-top: .2vw;
+  width: 3vw;
+}
+
+.TopBar .instagram img {
+  width: 100%;
+}
+
 
 #cart-widget {
   display: inline-block;
@@ -174,9 +190,7 @@ h1 span {
   display: none;
 }
 
-#cart-widget a{
-  background: #fff;
-}
+
 
 .breadcrumbs a {
   margin: 10px 0 10px 0;
@@ -243,6 +257,18 @@ h1 span {
   width: 100%;
 }
 
+.home_unite {
+  width: 94vw;
+  margin-left: 6vw;
+  vertical-align: top;
+}
+
+.home_unite img {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
 
 /* list container */
 
@@ -302,6 +328,8 @@ input[type=number] {
  flex-wrap: wrap;
  justify-content: space-between;
  font-family: 'Lato', sans-serif;
+ width: 60%;
+ margin: 0 auto;
 }
 #productList .product {
   width: calc(100% * (1/4) - 10px - 1px);
@@ -309,14 +337,30 @@ input[type=number] {
   position: relative;
 
 }
+
+#productList .product a {
+  border: .6vw solid #000;
+  display: block;
+}
+
+
+#productList .product a:hover {
+  border: .6vw solid #deff00;
+  display: block;
+}
+
 #productList img {
   width:100%;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  vertical-align: top;
 }
 #productList .product p, #productList .product h3 {
   text-align: center;
 
   text-transform: uppercase;
-  font-size: 0.9em;
+  font-size: 0.6em;
 }
 #productList .product p.price {
   font-family: 'Playfair Display', serif;
@@ -326,6 +370,23 @@ input[type=number] {
   opacity: 0.9;
   transition: all .4s ease-in-out;
 }
+
+
+#productList .product .addToCart {
+  text-align: center;
+}
+
+#productList .product .addToCart button {
+  background: #000;
+  color: #deff00;
+  border: 0;
+  text-align: center;
+  display: inline-block;
+  font-size: .5em;
+  text-transform: uppercase;
+}
+
+
 .ring-overlay{
   background-color: #ffffff;
   opacity: 0;

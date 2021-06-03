@@ -51,7 +51,6 @@ function App() {
 
       <CartProvider>
         <BrowserRouter>
-          
           <Header />
           
           <Switch>

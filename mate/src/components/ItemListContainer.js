@@ -101,13 +101,13 @@ useEffect(() => {
 const slides = [
     <Slide><HomeBanner /></Slide>,
     <Slide>
+        <div className="home_unite"><img src={"/images/unite.png"} alt={""} /></div>
         <div className="listContainer">
               {
                   categories === ''
                       ? <span >Cargando</span>
                       : <>
                           < ItemCategories categories={categories} />
-                          <h3>Productos</h3>
                       </>
               }
               {
