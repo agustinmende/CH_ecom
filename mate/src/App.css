@@ -202,9 +202,7 @@ h1 span {
 }
 
 
-.Fullpage {
-  
-}
+
 
 
 
@@ -330,10 +328,15 @@ input[type=number] {
  font-family: 'Lato', sans-serif;
  width: 60%;
  margin: 0 auto;
+
+ position: absolute;
+ top: 50%;
+ left: 50%;
+  transform: translate(-50%,-50%);
 }
 #productList .product {
   width: calc(100% * (1/4) - 10px - 1px);
-  margin-bottom: 30px;
+  margin: 1vw 0;
   position: relative;
 
 }
@@ -361,10 +364,13 @@ input[type=number] {
 
   text-transform: uppercase;
   font-size: 0.6em;
+  margin: .5vw 0;
+  padding: 0;
 }
 #productList .product p.price {
   font-family: 'Playfair Display', serif;
   color: #959595;
+  margin: 0;
 }
 #productList .product:hover > .ring-overlay{
   opacity: 0.9;
@@ -384,6 +390,7 @@ input[type=number] {
   display: inline-block;
   font-size: .5em;
   text-transform: uppercase;
+  margin: 0;
 }
 
 

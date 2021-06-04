@@ -19,10 +19,9 @@ function Header() {
             <h1><NavLink to="/"><img src={"/images/logo.png"} alt={""} /></NavLink></h1>
             <MenuButton open={open} handleClick={handleClick} />
             <div className="nav_button"><img src={"/images/nav_button.png"} alt={""} /></div>
-            <NavBar open={open} />
+            <NavBar open={open} handleClick={handleClick} />
         </div>
 
-      
         <TopBar />
         
     </div>

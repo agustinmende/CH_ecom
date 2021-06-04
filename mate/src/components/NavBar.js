@@ -46,13 +46,13 @@ const NavbarWrapper = styled.nav`
   z-index: -1;
 `;
 
-function Navbar({ open }) {
+function Navbar({ open , handleClick}) {
   return (
       <NavbarWrapper open={open}>
         <ul>
-            <li><NavLink to="/">Inicio</NavLink></li>
-            <li><NavLink to="/pagos">Metodos de pago</NavLink></li>
-            <li><NavLink to="/contacto">Contacto</NavLink></li>
+            <li><NavLink to="/" onClick={handleClick}>Inicio</NavLink></li>
+            <li><NavLink to="/pagos" onClick={handleClick}>Metodos de pago</NavLink></li>
+            <li><NavLink to="/contacto" onClick={handleClick}>Contacto</NavLink></li>
         </ul>
       </NavbarWrapper>
   );

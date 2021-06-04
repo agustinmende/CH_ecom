@@ -22,7 +22,6 @@ import Contacto from "./components/Contacto";
 
 function App() {
 
-
   useEffect(() => {
     const db = getFirestore();
     const categorias = db.collection('category');
@@ -46,13 +45,9 @@ function App() {
     
 
     <div className="App">
-
-      
-
       <CartProvider>
         <BrowserRouter>
           <Header />
-          
           <Switch>
             <Route exact path="/">
               <ItemListContainer />

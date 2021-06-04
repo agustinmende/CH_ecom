@@ -28,10 +28,6 @@ const fullPageOptions = {
 
 
 
-
-
-
-
 const ItemListContainer = (props) => {
 
 let [categories, setCategories] = useState('');
@@ -102,7 +98,7 @@ const slides = [
     <Slide><HomeBanner /></Slide>,
     <Slide>
         <div className="home_unite"><img src={"/images/unite.png"} alt={""} /></div>
-        <div className="listContainer">
+        {/*<div className="listContainer">
               {
                   categories === ''
                       ? <span >Cargando</span>
@@ -120,7 +116,19 @@ const slides = [
                               <ItemList items={itemsFiltered} />
                           </>
               }
-          </div>
+            </div>*/}
+            <div className="listContainer">
+                {
+                    itemsFiltered === 'Categoria no encontrada'
+                    ? <h3>Categoria: {idCategory} </h3>
+                    : itemsFiltered === ''
+                        ? <span>...</span>
+                        : <>
+                            
+                            <ItemList items={itemsFiltered} />
+                        </>
+                }
+            </div>
     </Slide>
   ];
   

@@ -50,8 +50,6 @@ function Item({id, item }) {
     };
 
 
-
-
     return (
         <div className="product">
             <Link to={`/item/${id}`}><img src={"/products/"+ item.pictureUrl} alt={item.title} /></Link>
