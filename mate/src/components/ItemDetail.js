@@ -2,6 +2,8 @@ import { useState, useContext } from 'react';
 import ItemCount from './ItemCount';
 import { CartContext } from '../context/CartContext';
 
+import Gallery from "../components/Gallery";
+
 function ItemDetail(props) {
         const initial = 0;
         const [itemsQ, setItemsQ] = useState(initial);
@@ -63,17 +65,7 @@ function ItemDetail(props) {
 
     return (
         <div className="producto">
-                <div className="gallery">
-                    <ul className="thumbs">
-                        <li className="active"><img src={"/products/"+item.pictureUrl} alt={item.title} /></li>
-                        <li><img src={"/products/"+item.pictureUrl} alt={item.title} /></li>
-                        <li><img src={"/products/"+item.pictureUrl} alt={item.title} /></li>
-                        <li><img src={"/products/"+item.pictureUrl} alt={item.title} /></li>
-                    </ul>
-                    <div className="img_detail">
-                        <img src={"/products/"+item.pictureUrl} alt={item.title} />
-                    </div>
-                </div>
+                <Gallery item={item} />
                 <div className="opciones-compra">
                     <h3>{item.title}</h3>
                     <p className="price">${item.price}</p>
