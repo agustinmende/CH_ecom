@@ -63,13 +63,23 @@ function ItemDetail(props) {
 
     return (
         <div className="producto">
-                <img src={"/products/"+item.pictureUrl} alt={item.title} />
-                    <div className="opciones-compra">
-                        <h3>{item.title}</h3>
-                        <p className="price">${item.price}</p>
-                        <p>{item.fullDescription}</p>
-                        <IsAvailable />
+                <div className="gallery">
+                    <ul className="thumbs">
+                        <li className="active"><img src={"/products/"+item.pictureUrl} alt={item.title} /></li>
+                        <li><img src={"/products/"+item.pictureUrl} alt={item.title} /></li>
+                        <li><img src={"/products/"+item.pictureUrl} alt={item.title} /></li>
+                        <li><img src={"/products/"+item.pictureUrl} alt={item.title} /></li>
+                    </ul>
+                    <div className="img_detail">
+                        <img src={"/products/"+item.pictureUrl} alt={item.title} />
                     </div>
+                </div>
+                <div className="opciones-compra">
+                    <h3>{item.title}</h3>
+                    <p className="price">${item.price}</p>
+                    <p>{item.fullDescription}</p>
+                    <IsAvailable />
+                </div>
         </div>
     );
 }

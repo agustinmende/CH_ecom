@@ -15,7 +15,7 @@ function Header() {
   return (
     <div>
 
-        <div className="NavBar">
+        <div className="NavBar navbaractive">
             <h1><NavLink to="/"><img src={"/images/logo.png"} alt={""} /></NavLink></h1>
             <MenuButton open={open} handleClick={handleClick} />
             <div className="nav_button"><img src={"/images/nav_button.png"} alt={""} /></div>

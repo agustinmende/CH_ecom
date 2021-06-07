@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;1,400&display=swap');
+
 body {
   margin: 0;
   font-family: 'Playfair Display', serif;
@@ -11,8 +14,8 @@ body {
 }
 /* app */
 .App {
-  /*padding: 50px 10vw 0 10vw;*/
-  max-width: 1170px;
+  /*padding: 50px 10vw 0 10vw;
+  max-width: 1170px;*/
   margin: 0px auto;
 }
 /* General styles */
@@ -64,6 +67,11 @@ h1 span {
   z-index: 3;
   max-width: 4vw;
 }
+
+.NavBar h1 {
+  margin-top: 2vh;
+}
+
 .NavBar ul {
   font-family: 'Lato', sans-serif;
   list-style-type: none;
@@ -105,6 +113,14 @@ h1 span {
  transform: translate(-50%,-50%);
  cursor: pointer;
  width: 50%;
+ text-align: center;
+}
+
+.NavBar .navicon svg {
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
 }
 
 .NavBar .navicon img{
@@ -363,7 +379,7 @@ input[type=number] {
   text-align: center;
 
   text-transform: uppercase;
-  font-size: 0.6em;
+  font-size: 1em;
   margin: .5vw 0;
   padding: 0;
 }
@@ -388,7 +404,7 @@ input[type=number] {
   border: 0;
   text-align: center;
   display: inline-block;
-  font-size: .5em;
+  font-size: .75em;
   text-transform: uppercase;
   margin: 0;
 }
@@ -415,33 +431,86 @@ input[type=number] {
 
 
 
+/* item_detail_container */
+
+.item_detail_container {
+  margin-left: 6vw;
+}
+
+.item_detail_container .producto {
+  width: 60%;
+  margin: 15vh auto;
+}
+
+
+
+
+
 /* detalle de producto */
 .producto {
   display: flex;
 }
 .producto img {
-  width: 50vw;
-
+  width: 100%;
 }
+
+.producto .gallery {
+  width: 65%;
+  margin-right: 5%;
+}
+
+.producto .gallery ul.thumbs {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 15%;
+}
+
+.producto .gallery ul.thumbs li {
+  display: inline-block;
+  padding: 0;
+  margin: 0 0 .4vw;
+  list-style: none;
+  cursor: pointer;
+}
+
+
+
+.producto .gallery .img_detail {
+  display: inline-block;
+  width: 78%;
+  vertical-align: top;
+  margin-left: 2%;
+}
+
+
+
+
+
+
 .producto .opciones-compra {
-  width: 40vw;
-  font-family: 'Lato', sans-serif;
-  margin: 0 0 0 10px;
-  padding: 0 0 0 20px;
+  width: 30%;
+  font-family: 'Montserrat', sans-serif;
+  padding: 4vw 0 0 20px;
 
 }
 .producto .opciones-compra h3 {
   padding: 0 ;
-  font-size: 1.6em;
+  font-size: 1.75em;
   text-transform: uppercase;
+  font-weight: 100;
+  margin: 0;
 }
 
 .producto .opciones-compra p {
-  color: rgb(22, 22, 22);
+  color: #ccc;
 }
 .producto .opciones-compra .price {
-  color: #ccc;
+  color: #deff00;
   font-size: 1.2em;
+  border-bottom: 1px solid #deff00;
+  padding: 0 0 1vh;
 }
 .producto .opciones-compra .button {
   background-color: #000000;
@@ -498,6 +567,20 @@ input[type=number] {
 .listContainer h3, .listContainer p.subtitle {
   text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* CartItem */
 
@@ -561,7 +644,24 @@ input[type=number] {
 /* Footer */
 #footer {
   margin: 50px 0 0 6vw;
+  border-top: 1px solid #ccc;
+  padding-top: 1vh;
+  position: relative;
 }
+
+
+#footer .footer_to_top {
+  width: 2.6vw;
+  position: absolute;
+  top: -1.3vw;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+
+#footer .footer_to_top img {
+  width: 100%;
+}
+
 
 #footer .services {
   display: flex;
@@ -582,22 +682,40 @@ input[type=number] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  vertical-align: middle;
 }
+
+
 #footer .bottom-navbar h2 {
-  width: 40%;
-  text-transform: uppercase;
-  font-weight:lighter;
-  font-size: 1.9em;
-  line-height: 2.2em;
+  width: 33%;
+  margin: 0;
+  padding: 0 0 0 3vw;
+  
+}
+
+#footer .bottom-navbar h3 {
+  width: 33%;
   margin: 0;
   padding: 0;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: .8vw;
 }
 
-#footer .bottom-navbar h2 span {
-  font-weight: bold;
-  align-items: center;
+#footer .bottom-navbar h4 {
+  width: 33%;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  padding: 0 3vw 0 0 ;
 }
 
+
+
+
+/*
 #footer .bottom-navbar ul {
   font-family: 'Lato', sans-serif;
   list-style-type: none;
@@ -616,6 +734,7 @@ input[type=number] {
   padding: 14px 16px;
   text-decoration: none;
 }
+*/
 
 /* Chckout */
 

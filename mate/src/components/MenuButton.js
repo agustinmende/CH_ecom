@@ -4,9 +4,9 @@ function MenuButton({ open, handleClick }) {
   return !open ? (
     <div className="navicon" onClick={handleClick}>
       <svg viewBox="0 0 100 80" width="30" height="30" fill="#fff">
-        <rect width="90" height="10" />
-        <rect y="30" width="90" height="10" />
-        <rect y="60" width="70" height="10" />
+        <rect width="100" height="10" />
+        <rect y="30" width="100" height="10" />
+        <rect y="60" width="80" height="10" />
       </svg>
     </div>
   ) : (

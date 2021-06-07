@@ -3,7 +3,7 @@ import CartWidget from '../components/CartWidget';
 
 const TopBar = () => {
   return (
-  <div className="TopBar">
+  <div className="TopBar topbaractive">
     <NavLink className="instagram" to="#"><img src="/images/top_nav_instagram.png" alt="" /></NavLink>
     <CartWidget/>
   </div>

@@ -25,7 +25,7 @@ function ItemDetailContainer() {
       {
         item === ''
           ? <p>Cargando...</p>
-          : <div>
+          : <div className="item_detail_container">
               <div className="breadcrumbs">
                 <Link to="/">
                   <span>← Volver</span>
