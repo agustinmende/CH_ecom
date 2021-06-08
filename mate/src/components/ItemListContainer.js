@@ -15,7 +15,7 @@ import { Fullpage, Slide, HorizontalSlider } from 'fullpage-react';
 const fullPageOptions = {
   // for mouse/wheel events
   // represents the level of force required to generate a slide change on non-mobile, 10 is default
-  scrollSensitivity: 7,
+  scrollSensitivity: 1,
 
   // for touchStart/touchEnd/mobile scrolling
   // represents the level of force required to generate a slide change on mobile, 10 is default

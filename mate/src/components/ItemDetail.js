@@ -27,8 +27,10 @@ function ItemDetail(props) {
         return (
             <>
                 <p className="stock">Cantidad disponible: {availableStock}</p>
-                <ItemCount min="0" max={maxStock} value={itemsQ} onAdd={onAdd} onSubstract={onSubstract} />
-                <button className="button" onClick={(e) => { onAddToCart(e) }} >Agregar al carrito</button>
+                <div className="product_actions">
+                    <ItemCount min="0" max={maxStock} value={itemsQ} onAdd={onAdd} onSubstract={onSubstract} />
+                    <button className="button" onClick={(e) => { onAddToCart(e) }} >Add to cart</button>
+                </div>
             </>
         )
     }
@@ -63,9 +65,16 @@ function ItemDetail(props) {
         setItemsQ(0);
     };
 
+    let imgUrls = [
+        "/products/"+item.pictureUrl,
+        'https://source.unsplash.com/k3IogSsONd4/538x638',
+        'https://source.unsplash.com/gThfDnqgfMw/538x638',
+        'https://source.unsplash.com/_1x_x8Vtg2w/538x638'
+     ]
+
     return (
         <div className="producto">
-                <Gallery item={item} />
+                <Gallery imgUrls={imgUrls} item={item} />
                 <div className="opciones-compra">
                     <h3>{item.title}</h3>
                     <p className="price">${item.price}</p>
