@@ -669,8 +669,9 @@ input[type=number] {
 }
 
 .cart-container .cart_header .hTitle {
-  width: 70%;
+  width: 65%;
   text-align: left;
+  padding-left: 5%;
 }
 
 
@@ -684,7 +685,7 @@ input[type=number] {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #e6e6e6;
-  padding:1vw 0 ;
+  padding:.75vw 0 ;
 }
 
 .cart-item * {
@@ -694,26 +695,27 @@ input[type=number] {
 }
 
 .cart-item a.close {
-  width: 5%;
+  width: 2%;
   color: #fff;
   text-decoration: none;
   font-weight: 700;
 }
 
 .cart-item .img {
-  width: 15%;
+  width: 12%;
   text-align: center;
 }
 
 .cart-item .img img {
-  width: 60%;
+  width: 48%;
 }
 
 .cart-item h3 {
   text-transform: uppercase;
   font-size: 0.8em;
-  width: 50%;
+  width: 56%;
   font-weight: lighter;
+  text-align: left;
 }
 
 
@@ -751,9 +753,110 @@ input[type=number] {
 
 
 
+.cart-container .cart_coupon {
+  text-align: left;
+  margin-top: 1.5vw;
+}
+
+.cart-container .cart_coupon input {
+  display: inline-block;
+  border: 0;
+  background: #fff;
+  height: 2.5vw;
+  padding: 0 1vw;
+  width: 22%;
+  margin-right: .5vw;
+}
+
+.cart-container .cart_coupon button {
+  display: inline-block;
+  border: 0;
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  height: 2.5vw;
+  padding: 0 1vw;
+  width: 15%;
+  margin-right: .5vw;
+}
 
 
 
+
+
+.cart_total {
+  width: 25%;
+  text-align: right;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cart_total .cart_total_w {
+  width: 80%;
+  display: inline-block;
+  text-align: left;
+}
+
+.cart_total h2 {
+  background: #fff;
+  color: #000;
+  padding: .5vw 1vw;
+  font-size: .8em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.cart_total p {
+  margin: 0;
+  padding: 0;
+}
+
+.cart_total p.r {
+  border-bottom: 1px solid #fff;
+  display: flex;
+}
+
+.cart_total p.r > span {
+  width: 60%;
+  padding: 1.4vw 0;
+}
+
+.cart_total p .l {
+  width: 40%;
+}
+
+.cart_total p .shipping_options span{
+  display: block;
+  white-space: nowrap;
+  padding: 0;
+}
+
+.cart_total p.total span {
+  color:#deff00;
+}
+
+.cart_total p.total span:first-child {
+  margin: .2em 0;
+}
+
+.cart_total p.total span:last-child {
+  font-size: 1.2em;
+}
+
+.cart_total .checkout a {
+  background: #101010;
+  text-align: center;
+  display: block;
+  color: #fff;
+  padding: 1vw 0;
+  text-decoration: none;
+  margin-top: 1.5em;
+}
+
+
+
+
+
+/*
 .cart-total {
   height: 150px;
   width: 25%;
@@ -779,6 +882,89 @@ input[type=number] {
   padding: 10px;
   border: none;
 }
+*/
+
+
+
+
+/* checkout */
+
+.contact_info {
+  width: 75%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.contact_info .contact_info_w {
+  width: 80%;
+}
+
+.contact_info h2 {
+  margin: 2.4em 0 1.6em;
+  color: #deff00;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+.contact_info h2:first-child {
+  margin-top: 0;
+}
+
+.contact_info .field_group {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1.8em;
+}
+
+.contact_info .field_group .fm {
+  width: 50%;
+}
+
+.contact_info .field_group > .fm:first-child {
+  width: 48%;
+  margin-right: 2%;
+}
+
+.contact_info .field_group > .fm:last-child {
+  width: 48%;
+  margin-left: 2%;
+}
+
+.contact_info .field_group .ff {
+  width: 100%;
+}
+
+.contact_info .field_group input[type=text] ,
+.contact_info .field_group input[type=email] {
+  display: block;
+  background: #fff;
+  border: none;
+  padding: 1.2em 4%;
+  width: 92%;
+}
+
+.contact_info .confirm {
+  text-align: right;
+}
+
+.contact_info .confirm button {
+  padding: 1.2em 6em;
+  text-transform: uppercase;
+  background: #101010;
+  text-align: center;
+  display: block;
+  color: #deff00;
+  border: 1px solid #deff00;
+  display: inline-block;
+}
+
+
+
+
+
+
+
 
 /* Footer */
 #footer {

@@ -16,6 +16,7 @@ import Checkout from "./components/Checkout";
 import Orders from "./components/Orders";
 import Pagos from "./components/Pagos";
 import Contacto from "./components/Contacto";
+import About from "./components/About";
 
 
 
@@ -72,6 +73,9 @@ function App() {
             </Route>
             <Route path="/contacto">
               <Contacto />
+            </Route>
+            <Route path="/about">
+              <About />
             </Route>
           </Switch>
         </BrowserRouter>
