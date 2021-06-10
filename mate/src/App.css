@@ -144,18 +144,14 @@ h1 span {
 .TopBar {
   display: block;
   justify-content: space-between;
-  height: 78px;
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
-  margin: 30px 0 30px 0;
 
   margin: 0;
   border: 0;
-  margin-left: 6vw;
   position: fixed;
   z-index: 2;
-  width: 94vw;
   text-align: right;
+  top: 0;
+  right: 0;
 }
 
 .TopBar .instagram {
@@ -208,13 +204,46 @@ h1 span {
 
 
 
+.breadcrumbs {
+  position: fixed;
+  top: 0;
+  left: 6vw;
+  z-index: 1;
+}
+
 .breadcrumbs a {
-  margin: 10px 0 10px 0;
-  display: block;
+  margin: .2vw 0 0 2vw;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
+  background: #fff;
+  display: inline-block;
+  padding: 0 1vw ;
+  font-family: 'Montserrat', sans-serif;
+  vertical-align: middle;
+}
 
+.breadcrumbs a span {
+  vertical-align: middle;
+  display: inline-block;
+  height: 5vh;
+}
+
+.breadcrumbs a span::before {
+  content: " ";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.breadcrumbs a span * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.breadcrumbs a span img {
+  position: relative;
+  top: -2px;
 }
 
 
@@ -338,18 +367,26 @@ input[type=number] {
 
 /* item lits */
 #productList {
- display: flex;
- flex-wrap: wrap;
- justify-content: space-between;
- font-family: 'Lato', sans-serif;
- width: 60%;
- margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: 'Montserrat', sans-serif;
+  width: 60%;
+  margin: 0 auto;
 
- position: absolute;
- top: 50%;
- left: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%,-50%);
 }
+
+@media screen and (max-width: 1400px) {
+  #productList {
+    width: 50%;
+  }
+}
+
+
 #productList .product {
   width: calc(100% * (1/4) - 10px - 1px);
   margin: 1vw 0;
@@ -384,7 +421,6 @@ input[type=number] {
   padding: 0;
 }
 #productList .product p.price {
-  font-family: 'Playfair Display', serif;
   color: #959595;
   margin: 0;
 }
@@ -958,6 +994,93 @@ input[type=number] {
   border: 1px solid #deff00;
   display: inline-block;
 }
+
+
+
+
+
+/* ckeckout success*/
+
+#checkoutSuccess {
+  margin-left: 6vw;
+  height: 84vh;
+  position: relative;
+}
+
+#checkoutSuccess .checkout_success_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 28%;
+}
+
+#checkoutSuccess .checkout_success_content img {
+  width: 100%;
+}
+
+#checkoutSuccess .checkout_success_content .text {
+  position: absolute;
+  font-family: 'Montserrat', sans-serif;
+  top: 67.2%;
+  left: 8%;
+  color: #101010;
+  font-size: .8vw;
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+/* about */
+
+#about {
+  margin-left: 6vw;
+}
+
+#about .about_text {
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  padding: 1vw 0;
+  margin: 5vw 4vw 5vw 2.5vw;
+  font-size: 1.2em;
+}
+
+#about .about_text .res {
+  color: #deff00;
+}
+
+#about .about_text::before,
+#about .about_text::after {
+  content: " ";
+  height: 1px;
+  border-top: 1px solid #deff00;
+  width: 24%;
+  position: absolute;
+  display: block;
+  left: 0;
+}
+
+#about .about_text::before {
+  top: 0;
+}
+
+#about .about_text::after {
+  bottom: 0;
+}
+
+#about .about_text .about_logo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+
+
 
 
 

@@ -4,7 +4,7 @@ const Footer = () => {
   return (
   <div id="footer" className="">
       {/*
-   <div className="services">
+      <div className="services">
         <div>
             <h3>Envio Gratis</h3>
             <p>Por compras superiores a $10.000 en CABA</p>
@@ -14,7 +14,7 @@ const Footer = () => {
             <h3>Ajuste Gratis</h3>
             <p>Si el tamaño no te queda bien ¡Hacemos el ajuste gratis!</p>
         </div>
-    </div>
+      </div>
       */ }
 
         <div className="bottom-navbar">

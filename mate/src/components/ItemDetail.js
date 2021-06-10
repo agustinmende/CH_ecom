@@ -65,6 +65,7 @@ function ItemDetail(props) {
         setItemsQ(0);
     };
 
+    
     let imgUrls = [
         "/products/"+item.pictureUrl,
         'https://source.unsplash.com/k3IogSsONd4/538x638',

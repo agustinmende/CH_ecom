@@ -52,7 +52,7 @@ function Navbar({ open , handleClick}) {
         <ul>
             <li><NavLink to="/" onClick={handleClick}>Inicio</NavLink></li>
             <li><NavLink to="/pagos" onClick={handleClick}>Metodos de pago</NavLink></li>
-            <li><NavLink to="/contacto" onClick={handleClick}>Contacto</NavLink></li>
+            {/*<li><NavLink to="/contacto" onClick={handleClick}>Contacto</NavLink></li>*/}
             <li><NavLink to="/about" onClick={handleClick}>About</NavLink></li>
         </ul>
       </NavbarWrapper>

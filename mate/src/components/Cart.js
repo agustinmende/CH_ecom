@@ -20,7 +20,7 @@ function Cart(props) {
             <div >
                 <div className="breadcrumbs">
                     <Link to="/">
-                    <span>← Volver</span>
+                    <span><img src="/images/back_arrow.png" alt="" /> Back to shop</span>
                     </Link>
                 </div>
 

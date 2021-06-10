@@ -50,6 +50,9 @@ const validateFields = () => {
 
     console.log(buyer)
 
+    window.location.href = "/checkoutSuccess";
+    return false;
+
     if(buyer.name === "") {
         setNameError(true);
     } else {
@@ -121,8 +124,8 @@ const validateFields = () => {
         <div >
 
             <div className="breadcrumbs">
-                <Link to="/cart">
-                <span>← Volver</span>
+                <Link to="/">
+                  <span><img src="/images/back_arrow.png" alt="" /> Back to shop</span>
                 </Link>
             </div>
 

@@ -13,6 +13,7 @@ import Cart from "./components/Cart";
 import {CartProvider} from "./context/CartContext";
 import {getFirestore} from "./configs/Firebase";
 import Checkout from "./components/Checkout";
+import CheckoutSuccess from "./components/CheckoutSuccess";
 import Orders from "./components/Orders";
 import Pagos from "./components/Pagos";
 import Contacto from "./components/Contacto";
@@ -61,6 +62,9 @@ function App() {
             </Route>
             <Route path="/checkout">
               <Checkout />
+            </Route>
+            <Route path="/checkoutsuccess">
+              <CheckoutSuccess />
             </Route>
             <Route path="/cart">
               <Cart />
